@@ -9,13 +9,13 @@ Hadoop Platform and Application Framework. Content and exercises from Coursera -
   > cd map-reduce
   > sh /data_generator/data_generator.script
   ```
-### Running without hadoop stack 
+### Running without hadoop stack (local)
 
   ```
   > cat input/join2_gen* | ./join2_mapper.py | sort | ./join2_reducer.py
   ```
 
-### Running with hadoop stack
+### Running with hadoop stack (remote - cloudera)
   ```
   > hdfs dfs -put input /user/cloudera/input
   > hdfs dfs -ls /user/cloudera/input
