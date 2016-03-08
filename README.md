@@ -26,5 +26,5 @@ Hadoop Platform and Application Framework. Content and exercises from Coursera -
      -input /user/cloudera/input \
      -output /user/cloudera/output \   
      -mapper map-reduce/join2_mapper.py \   
-     -reducer map-reduce/join1_reducer.py
+     -reducer map-reduce/join2_reducer.py
   ```
