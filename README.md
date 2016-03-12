@@ -64,7 +64,7 @@ Reading: Resiliant Destributed Datasets
 
 Loading code into PySpark console:
   ```
-  Spark> load /spark/wordcount.py
+  Spark> load spark/wordcount.py
   ```
 
 Testing code:
