@@ -80,6 +80,8 @@ Applying split_fileA function to dataset A:
   ```
   Spark> fileA_data = fileA.map(split_fileA)
   Spark> fileA_data.collect()
+
+  Out[74]: [(u'able', 991), (u'about', 11), (u'burger', 15), (u'actor', 22)]
   ```
 
 Applying split_fileB function to dataset B:
@@ -87,6 +89,16 @@ Applying split_fileB function to dataset B:
   ```
   Spark> fileB_data = fileB.map(split_fileB)
   Spark> fileB_data.collect()
+  
+  Out[72]:
+    [(u'able', u'Jan-01 5'),
+     (u'about', u'Feb-02 3'),
+     (u'about', u'Mar-03 8'),
+     (u'able', u'Apr-04 13'),
+     (u'actor', u'Feb-22 3'),
+     (u'burger', u'Feb-23 5'),
+     (u'burger', u'Mar-08 2'),
+     (u'able', u'Dec-15 100')]
   ```
 
 
@@ -94,5 +106,6 @@ Join A and B:
   ```
   Spark> fileB_joined_fileA = fileB_data.join(fileA_data)
   Spark> fileB_joined_fileA.collect()
+  Out[76]: [(u'about', (u'Feb-02 3', 11)), ...]
   ```
 
