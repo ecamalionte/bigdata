@@ -21,12 +21,11 @@ fileB.collect()
 # input_example: line = "able,999"
 def split_fileA(line):
     word, count = line.split(',')
-    int_count = int(count)
-    return (word,int_count)
+    return (word,int(count))
 
 def test_splitA():
     pair = split_fileA("able, 999")
-    pair == ("able", 999)
+    return pair == ("able", 999)
 
 fileA_data = fileA.map(split_fileA)
 fileA_data.collect()
@@ -41,7 +40,7 @@ def split_fileB(line):
 
 def test_splitB():
     pair = split_fileB("Jan-01 able,5")
-    pair == ("able", "Jan-01 5")
+    return pair == ("able", "Jan-01 5")
 
 fileB_data = fileB.map(split_fileB)
 fileB_data.collect()
