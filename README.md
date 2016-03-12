@@ -106,6 +106,7 @@ Join A and B:
   ```
   Spark> fileB_joined_fileA = fileB_data.join(fileA_data)
   Spark> fileB_joined_fileA.collect()
+ 
   Out[76]: [(u'about', (u'Feb-02 3', 11)), ...]
   ```
 
