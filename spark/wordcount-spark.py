@@ -1,9 +1,9 @@
-fileA = sc.textFile("input/join1_FileA.txt")
+fileA = sc.textFile("input/map-reduce/join1_FileA.txt")
 fileA.collect()
 
 # Out[]: [u'able,991', u'about,11', u'burger,15', u'actor,22']
 
-fileB = sc.textFile("input/join1_FileB.txt")
+fileB = sc.textFile("input/map-reduce/join1_FileB.txt")
 fileB.collect()
 
 #Out[29]:
@@ -20,8 +20,9 @@ fileB.collect()
 #Mapper A
 # input_example: line = "able,999"
 def split_fileA(line):
-    word, count = line.strip().split(',')
-    return (word,int(count))
+    word, count = line.split(',')
+    int_count = int(count)
+    return (word,int_count)
 
 def test_splitA():
     pair = split_fileA("able, 999")
