@@ -25,7 +25,8 @@ show_channel = show_channel_file.map(split_show_channel)
 joined_dataset = show_views.join(show_channel)
 
 def extract_channel_views(show_views_channel):
-    show, views, channel = show_views_channel
+    show, views_channel = show_views_channel
+    views, channel = views_channel
     return (channel, views)
 
 channel_views = joined_dataset.map(extract_channel_views)
