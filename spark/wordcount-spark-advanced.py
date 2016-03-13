@@ -22,6 +22,8 @@ def split_show_channel(line):
 
 show_channel = show_channel_file.map(split_show_channel)
 
+
+#Join
 joined_dataset = show_views.join(show_channel)
 
 def extract_channel_views(show_views_channel):
@@ -35,4 +37,4 @@ def some_function(a, b):
     return ( a + b )
 
 
-channel_views.groupByKey(some_function).collect()
+channel_views.reduceByKey(some_function).collect()
