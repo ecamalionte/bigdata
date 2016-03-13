@@ -22,10 +22,10 @@ def split_show_channel(line):
 
 show_channel = show_channel_file.map(split_show_channel)
 
-joined_dataset = show_views.union(show_channel)
+joined_dataset = show_views.join(show_channel)
 
-def extract_channel_views(show_views_show_channel):
-    show, views, show, channel = show_views_show_channel
+def extract_channel_views(show_views_channel):
+    show, views, channel = show_views_channel
     return (channel, views)
 
 channel_views = joined_dataset.map(extract_channel_views)
